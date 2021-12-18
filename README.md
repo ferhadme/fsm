@@ -5,6 +5,6 @@ The Simulation of Finite State Machine (Finite Automata) with Traffic Light exam
 
 ``` sh
 $ make
-$ ./simulate (red|yellow|green)
+$ ./simulate red # [red|yellow|green]
 ```
 
