@@ -16,14 +16,11 @@
 #define YEL   "\x1B[33m"
 #define RESET "\x1B[0m"
 
+#define NEXT_LIGHT(state) (state + 1) % 3
 
 const char *lights[] = {"red", "yellow", "green"};
 const char *light_color_codes[] = {RD, YEL, GRN};
 
-int next_light(int state)
-{
-    return (state + 1) % 3;
-}
 
 void usage(const char *prog)
 {
@@ -69,7 +66,7 @@ int main(int argc, char **argv)
     while (s++ <= 10) {
         printf("State: %s%s%s\n",
                light_color_codes[state], lights[state], RESET);
-        state = next_light(state);
+        state = NEXT_LIGHT(state);
         sleep(1);
     }
 
